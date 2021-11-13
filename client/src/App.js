@@ -1,26 +1,17 @@
-import { BrowserRouter } from 'react-router-dom';
-import styled from 'styled-components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { SpaComponent } from './components/spa';
-import { SsrComponent } from './components/ssr';
-import { LanguagesComponent } from './components/lang';
+import { RootComponent } from './components/root';
 
-const SectionsWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr repeat(3, 2fr) 1fr;
-  grid-template-rows: 1fr 4fr 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-`;
+const App = () =>  {
 
-function App() {
   return (
     <BrowserRouter>
-      <SectionsWrapper>
-        <LanguagesComponent />
-        <SpaComponent />
-        <SsrComponent />
-      </SectionsWrapper>
+     <Routes>
+        <Route path="/:lang/spa/public" element={<div>Public</div>} />
+        <Route path="/:lang/spa/private" element={<div>Private</div>} />
+        <Route path="/:lang" element={<RootComponent />} />
+        <Route path="/" element={<RootComponent />} />
+      </Routes>
     </BrowserRouter>  
   );
 }
