@@ -5,7 +5,7 @@ const getBaseTemplate = (lang, content) => `
     <html lang=${lang}>
         <head></head>
         <body>
-            <a href="/">${translate(lang, 'home')}</a>
+            <a href=${lang === 'de' ? '/de' : '/'}>${translate(lang, 'home')}</a>
             ${content}
         </body>
     </html>
