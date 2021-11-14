@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import germanFlag from './de.png'
 import britishFlag from './en.png'
-import { LanguageContext } from '../LanguageContext';
+import { LanguageContext } from '../languageContext';
 
 const LanguagesComponentWrapper = styled.div`
     display: flex;

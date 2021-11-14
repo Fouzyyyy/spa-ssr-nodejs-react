@@ -1,10 +1,9 @@
-import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { SpaComponent } from '../spa';
 import { SsrComponent } from '../ssr';
 import { LanguagesComponent } from '../lang';
-import { LanguageContext } from '../LanguageContext';
+import { LanguageProvider } from "../languageProvider";
 
 const SectionsWrapper = styled.div`
   display: grid;
@@ -14,14 +13,12 @@ const SectionsWrapper = styled.div`
   grid-row-gap: 0px;
 `;
 
-export const RootComponent = () => {
-    const { lang } = useParams();
-
-    return <LanguageContext.Provider value={lang || 'en'}>
+export const HomePageComponent = () => {
+    return <LanguageProvider>
               <SectionsWrapper>
                <LanguagesComponent />
                <SpaComponent />
                <SsrComponent />
               </SectionsWrapper>
-          </LanguageContext.Provider>;
+          </LanguageProvider>;
 };

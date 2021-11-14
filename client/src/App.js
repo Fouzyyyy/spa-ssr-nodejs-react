@@ -1,16 +1,19 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { RootComponent } from './components/root';
+import { HomePageComponent } from './components/home';
+import { PublicPage } from './components/publicPage';
+import { PrivatePage } from './components/privatePage';
 
 const App = () =>  {
-
   return (
     <BrowserRouter>
      <Routes>
-        <Route path="/:lang/spa/public" element={<div>Public</div>} />
-        <Route path="/:lang/spa/private" element={<div>Private</div>} />
-        <Route path="/:lang" element={<RootComponent />} />
-        <Route path="/" element={<RootComponent />} />
+        <Route path="/:lang/spa/public" element={<PublicPage />} />
+        <Route path="/spa/public" element={<PublicPage />} />
+        <Route path="/:lang/spa/private" element={<PrivatePage />} />
+        <Route path="/spa/private" element={<PrivatePage />} />
+        <Route path="/:lang" element={<HomePageComponent />} />
+        <Route path="/" element={<HomePageComponent />} />
       </Routes>
     </BrowserRouter>  
   );
