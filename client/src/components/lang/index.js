@@ -7,7 +7,6 @@ import britishFlag from './en.png'
 import { LanguageContext } from '../languageContext';
 
 const LanguagesComponentWrapper = styled.div`
-    display: flex;
     grid-area: 1 / 3 / 2 / 4;
     height: 30%;
     margin-left: 35%;

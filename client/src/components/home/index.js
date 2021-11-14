@@ -16,9 +16,9 @@ const SectionsWrapper = styled.div`
 export const HomePageComponent = () => {
     return <LanguageProvider>
               <SectionsWrapper>
-               <LanguagesComponent />
-               <SpaComponent />
-               <SsrComponent />
+              <LanguagesComponent />
+              <SpaComponent />
+              <SsrComponent />
               </SectionsWrapper>
           </LanguageProvider>;
 };
